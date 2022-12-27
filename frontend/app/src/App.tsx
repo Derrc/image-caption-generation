@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import FileUploadButton from './components/FileUploadButton'
+import { Container, Background, Text } from './Styles'
 
 // placeholder type for passing data
 type DataType = {
@@ -37,10 +38,12 @@ function App() {
   }, [])
 
   return (
-    <div>
-      {displayData()}
-      <FileUploadButton text='Upload'/>
-    </div>
+      <Background>
+        <Container>
+          <Text> Image Caption Generation </Text>
+          <FileUploadButton text='Upload'/>
+        </Container>
+      </Background>
   )
 }
 
