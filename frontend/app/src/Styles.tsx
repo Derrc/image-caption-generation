@@ -3,7 +3,7 @@ import img from './images/sunflowers.jpg'
 
 export const Container = styled.div`
     display: flex;
-    height: 50%;
+    height: 60%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -18,7 +18,7 @@ export const Background = styled.div`
 `
 
 export const Text = styled.text`
-    font-size: 80px;
+    font-size: ${props => props.fontSize};
     font-weight: bold;
     color: #fff;
 `
