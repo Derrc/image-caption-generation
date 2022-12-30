@@ -1,4 +1,4 @@
-import { Card, CardMedia, CardContent, Typography } from '@mui/material'
+import { Card, CardContent, Typography } from '@mui/material'
 import { Image } from '../Styles'
 
 type Props = {
