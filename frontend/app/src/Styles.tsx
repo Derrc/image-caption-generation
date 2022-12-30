@@ -3,7 +3,7 @@ import img from './images/sunflowers.jpg'
 
 export const Container = styled.div`
     display: flex;
-    height: 60%;
+    height: 70%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -11,7 +11,7 @@ export const Container = styled.div`
 
 export const Background = styled.div`
     height: 1000px;
-    background-image: url(${img});
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${img});
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -20,14 +20,20 @@ export const Background = styled.div`
 export const Text = styled.text`
     font-size: ${props => props.fontSize};
     font-weight: bold;
-    color: #fff;
+    color: white;
+    opacity: 0.9;
 `
 
 export const Image = styled.img`
     src: ${props => props.src};
     alt: ${props => props.alt};
-    max-width: ${props => props.width};
-    height: auto;
+    max-height: ${props => props.height};
+    width: auto;
 `
+
+export const cardStyles = {
+    height: '100px',
+    width: '100px',
+}
 
 

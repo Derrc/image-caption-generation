@@ -7,7 +7,7 @@ from torchvision.models import resnet34
 class Encoder(nn.Module):
     def __init__(self, output_dim=14):
         super().__init__()
-        resnet = resnet34(pretrained=True)
+        resnet = resnet34(pretrained=False)
         layers = list(resnet.children())[:-2]
         self.resnet = nn.Sequential(*layers)
         # adaptive pool layer so encoder can take images of different sizes

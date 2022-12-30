@@ -1,6 +1,7 @@
 import { Button } from '@mui/material'
 import { useEffect, useState } from 'react'
 import { Text, Container, Image } from '../Styles'
+import ImageCard from './ImageCard'
 
 type Props = {
     text: string
@@ -48,9 +49,8 @@ const FileUploadButton = (props: Props) => {
 
     return (
         <Container>
-            {file && <Image src={file} alt='uploaded' width='200px' />}
-            {caption && <Text fontSize='40px'> {caption} </Text>}
-            <Button variant='contained' component='label'>
+            {file && <ImageCard src={file} caption={caption} />}
+            <Button sx={{marginTop: '20px'}} variant='contained' component='label'>
                 {props.text}
                 <input hidden type='file' accept='image/*' onChange={handleChange}/>
             </Button>
