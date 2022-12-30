@@ -1,6 +1,6 @@
 import { Button } from '@mui/material'
 import { useEffect, useState } from 'react'
-import { Text, Container, Image } from '../Styles'
+import { Container } from '../Styles'
 import ImageCard from './ImageCard'
 
 type Props = {

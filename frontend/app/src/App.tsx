@@ -1,6 +1,5 @@
-import FileUploadButton from './components/FileUploadButton'
+import UploadButton from './components/UploadButton'
 import { Container, Background, Text } from './Styles'
-import { Card } from '@mui/material'
 
 function App() {
 
@@ -8,7 +7,7 @@ function App() {
       <Background>
         <Container>
           <Text fontSize='80px'> Image Caption Generator </Text>
-          <FileUploadButton text='Upload'/>
+          <UploadButton text='Upload'/>
         </Container>
       </Background>
   )
