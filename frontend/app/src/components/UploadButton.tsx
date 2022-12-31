@@ -1,5 +1,4 @@
 import { Button } from '@mui/material'
-import { green } from '@mui/material/colors'
 import React, { useEffect, useState } from 'react'
 import { FlexContainer } from '../Styles'
 import ImageCard from './ImageCard'
