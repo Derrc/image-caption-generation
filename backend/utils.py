@@ -126,5 +126,6 @@ def beam_search(encoder, decoder, image_src, tokens, tokens_to_id, num_tokens, k
     best_seq = seqs_done[ind]
 
     best_seq = [tokens[id] for id in best_seq]
-
-    return ' '.join(best_seq)
+    
+    # exclude start and end tokens
+    return ' '.join(best_seq[1:-1])

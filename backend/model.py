@@ -1,13 +1,13 @@
 import torch
 import torch.nn as nn
 import numpy as np
-from torchvision.models import resnet34
+from torchvision.models import resnet34, ResNet34_Weights
 
 # ResNet-34 CNN Encoder
 class Encoder(nn.Module):
     def __init__(self, output_dim=14):
         super().__init__()
-        resnet = resnet34(pretrained=False)
+        resnet = resnet34(weights=ResNet34_Weights.DEFAULT)
         layers = list(resnet.children())[:-2]
         self.resnet = nn.Sequential(*layers)
         # adaptive pool layer so encoder can take images of different sizes

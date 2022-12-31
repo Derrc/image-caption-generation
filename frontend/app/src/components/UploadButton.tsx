@@ -2,6 +2,7 @@ import { Button } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { FlexContainer } from '../Styles'
 import ImageCard from './ImageCard'
+import { useIsMount } from '../hooks'
 
 type Props = {
     text: string
@@ -10,6 +11,9 @@ type Props = {
 const FileUploadButton = (props: Props) => {
     const [file, setFile] = useState('');
     const [caption, setCaption] = useState('')
+
+    // hook for actions after first render and after first render
+    const isMount = useIsMount()
 
     // converts blobs to data urls for inference in backend
     function blobToDataURL(blob: Blob): Promise<void> {
@@ -42,13 +46,16 @@ const FileUploadButton = (props: Props) => {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({source: file})
         }
-        fetch(`/caption`, requestOptions).then(
+        // sends post requests after first render only
+        if (!isMount) {
+          fetch(`/caption`, requestOptions).then(
             response => response.json()
-        ).then(
+          ).then(
           data => {
             setCaption(data)
           }
         )
+        }
       // run when dependencies change
       }, [file])
 

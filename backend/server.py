@@ -61,6 +61,5 @@ api.add_resource(CaptionList, '/caption')
 
 
 if __name__ == '__main__':
-    caption = beam_search(encoder, decoder, '/cache/image.png', tokens, tokens_to_id, num_tokens)
-    # app.run(debug=True)
+    app.run(debug=True)
 
