@@ -1,5 +1,6 @@
 import { Card, CardContent, Typography } from '@mui/material'
 import { Image } from '../Styles'
+import blank_img from '../images/blank_image.jpg'
 
 type Props = {
     src: string
@@ -7,7 +8,8 @@ type Props = {
 }
 const ImageCard = (props: Props) => {
 
-    const caption = props.caption ? props.caption : 'Generating Caption...';
+    const caption = props.caption ? props.caption : 'Waiting for Upload...';
+    const src = props.src ? props.src : blank_img;
     const cardStyles = {
         display: 'flex',
         flexDirection: 'column',
@@ -16,7 +18,7 @@ const ImageCard = (props: Props) => {
     }
     return (
         <Card sx={cardStyles}>
-            <Image src={props.src} alt='uploaded' height='300px' />
+            <Image src={src} alt='uploaded' height='300px' />
             <CardContent sx={{alignItems: 'center', justifyContent: 'center'}}>
                 <Typography variant='body2' fontFamily='cursive'>
                     {caption}

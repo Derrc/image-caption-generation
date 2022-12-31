@@ -54,7 +54,7 @@ const FileUploadButton = (props: Props) => {
 
     return (
         <FlexContainer>
-            {file && <ImageCard src={file} caption={caption} />}
+            <ImageCard src={file} caption={caption} />
             <Button sx={{marginTop: '20px', fontFamily:'cursive'}} variant='contained' component='label' color='inherit'>
                 {props.text}
                 <input hidden type='file' accept='image/*' onChange={handleChange} onClick={handleClick}/>

@@ -41,6 +41,7 @@ def process_tokens(caption_filepath):
     # total number of tokens (vocab size)
     num_tokens = len(tokens)
     tokens = list(tokens)
+    tokens.sort()
     tokens_to_id = dict((token, i) for i, token in enumerate(tokens))
 
     return tokens, tokens_to_id, num_tokens
