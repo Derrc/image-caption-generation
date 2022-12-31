@@ -1,6 +1,7 @@
 import { Button } from '@mui/material'
-import { useEffect, useState } from 'react'
-import { Container } from '../Styles'
+import { green } from '@mui/material/colors'
+import React, { useEffect, useState } from 'react'
+import { FlexContainer } from '../Styles'
 import ImageCard from './ImageCard'
 
 type Props = {
@@ -28,6 +29,11 @@ const FileUploadButton = (props: Props) => {
         }
         const blob = e.target.files[0]
         blobToDataURL(blob)
+        setCaption('Generating Caption...')
+    }
+
+    function handleClick() {
+      setCaption('Waiting for Upload...')
     }
 
     // POST request sending image source and receiving caption after inference
@@ -48,13 +54,13 @@ const FileUploadButton = (props: Props) => {
       }, [file])
 
     return (
-        <Container>
+        <FlexContainer>
             {file && <ImageCard src={file} caption={caption} />}
-            <Button sx={{marginTop: '20px'}} variant='contained' component='label'>
+            <Button sx={{marginTop: '20px', fontFamily:'cursive'}} variant='contained' component='label' color='inherit'>
                 {props.text}
-                <input hidden type='file' accept='image/*' onChange={handleChange}/>
+                <input hidden type='file' accept='image/*' onChange={handleChange} onClick={handleClick}/>
             </Button>
-        </Container>
+        </FlexContainer>
     )
 }
 

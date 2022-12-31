@@ -1,15 +1,18 @@
 import UploadButton from './components/UploadButton'
-import { Container, Background, Text } from './Styles'
+import { Container, FlexContainer, Background, Text } from './Styles'
 
 function App() {
 
   return (
+    <Container>
       <Background>
-        <Container>
-          <Text fontSize='80px'> Image Caption Generator </Text>
+        <FlexContainer>
+          <Text fontSize={'50px'} > Image Caption Generator </Text>
+          <Text fontSize={'20px'}> Upload an image to caption! </Text>
           <UploadButton text='Upload'/>
-        </Container>
+        </FlexContainer>
       </Background>
+    </Container>
   )
 }
 

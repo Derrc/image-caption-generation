@@ -18,7 +18,7 @@ const ImageCard = (props: Props) => {
         <Card sx={cardStyles}>
             <Image src={props.src} alt='uploaded' height='300px' />
             <CardContent sx={{alignItems: 'center', justifyContent: 'center'}}>
-                <Typography variant='body2'>
+                <Typography variant='body2' fontFamily='cursive'>
                     {caption}
                 </Typography>
             </CardContent>
