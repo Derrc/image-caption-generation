@@ -6,8 +6,13 @@
 
 
 # Small Demo
-- All images in demo and in /results folder were never seen by the model (taken from test dataset)
 https://user-images.githubusercontent.com/53236934/210160063-38c80279-34c5-439c-af5b-bc5739b4930b.mp4
+
+
+# Results
+- All images in demo and in /results folder were never seen by the model (taken from test dataset)
+- It was amazing to see the accuracy that the model with attention could achieve on unseen images, even if it's not a state-of-the-art model compared to now
+- Before implementing the Attention network, I tested the model with just a CNN and LSTM, which became proficient at recognizing dogs but not colors or complex relations between objects
 
 
 # Future Work
