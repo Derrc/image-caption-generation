@@ -3,6 +3,7 @@
 - Uses ResNet-34 as the CNN Encoder, LSTM with Attention Network as Decoder
 - Trained on Flikr8k dataset
 - Hosted locally using Flask/Python/Pytorch for the backend and React/Typescript for the frontend
+- Small project that I hope to expand on in the future
 
 
 # Small Demo
