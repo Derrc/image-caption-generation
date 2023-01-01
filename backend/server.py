@@ -29,6 +29,9 @@ decoder = Decoder(
 encoder.load_state_dict(torch.load(ENCODER_PATH, map_location=DEVICE))
 decoder.load_state_dict(torch.load(DECODER_PATH, map_location=DEVICE))
 
+encoder.eval()
+decoder.eval()
+
 # storing captions as a mock database
 CAPTIONS = {
     'caption1': 'Initial Caption'

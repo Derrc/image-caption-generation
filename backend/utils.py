@@ -51,8 +51,8 @@ def process_tokens(caption_filepath):
 # image: src url
 def beam_search(encoder, decoder, image_src, tokens, tokens_to_id, num_tokens, k=3, max_length=35):
     # image preprocessing
-    # urlretrieve(image_src, './cache/image.png')
-    image = Image.open('./cache/dogs.jpg')
+    urlretrieve(image_src, './cache/image.png')
+    image = Image.open('./cache/image.png')
     image = transform(image).unsqueeze(0)
 
     features = encoder(image)
